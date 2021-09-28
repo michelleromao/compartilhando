@@ -39,7 +39,7 @@ const RootNavigator = () => {
           headerTitle: 'Criar',
           headerShown: true,
           headerStyle: {
-            backgroundColor: '#6CB9AA',
+            backgroundColor: '#F6F6F6',
           },
           headerTintColor: '#352166',
           headerTitleAlign: 'center',
@@ -58,7 +58,7 @@ const RootNavigator = () => {
             headerTitle: 'Entrar',
             headerShown: true,
             headerStyle: {
-              backgroundColor: '#6CB9AA',
+              backgroundColor: '#F6F6F6',
             },
             headerTintColor: '#352166',
             headerTitleAlign: 'center',
@@ -77,7 +77,7 @@ const RootNavigator = () => {
           headerTitle: 'Espaço',
           headerShown: true,
           headerStyle: {
-            backgroundColor: '#6CB9AA',
+            backgroundColor: '#F6F6F6',
           },
           headerTintColor: '#352166',
           headerTitleAlign: 'center',
@@ -96,7 +96,7 @@ const RootNavigator = () => {
           headerTitle: 'Boas vindas',
           headerShown: true,
           headerStyle: {
-            backgroundColor: '#6CB9AA',
+            backgroundColor: '#F6F6F6',
           },
           headerTintColor: '#352166',
           headerTitleAlign: 'center',
@@ -116,7 +116,7 @@ const RootNavigator = () => {
           headerTitle: 'Meu perfil',
           headerShown: true,
           headerStyle: {
-            backgroundColor: '#6CB9AA',
+            backgroundColor: '#F6F6F6',
           },
           headerTintColor: '#352166',
           headerTitleAlign: 'center',
@@ -135,7 +135,7 @@ const RootNavigator = () => {
           headerTitle: 'Pessoal',
           headerShown: true,
           headerStyle: {
-            backgroundColor: '#6CB9AA',
+            backgroundColor: '#F6F6F6',
           },
           headerTintColor: '#352166',
           headerTitleAlign: 'center',
@@ -154,7 +154,7 @@ const RootNavigator = () => {
           headerTitle: 'Autenticação',
           headerShown: true,
           headerStyle: {
-            backgroundColor: '#6CB9AA',
+            backgroundColor: '#F6F6F6',
           },
           headerTintColor: '#352166',
           headerTitleAlign: 'center',

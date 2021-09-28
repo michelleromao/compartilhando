@@ -12,25 +12,19 @@ import Rules from '../screens/Rules';
 import Bills from '../screens/Bills';
 import Buys from '../screens/Buys';
 
+import { HomeIcon, RuleIcon, BillIcon, BuyIcon, TaskIcon } from '../components/Icons/index'
+
+
 const HomeStack = createStackNavigator();
 const HomeTabNavigation = () =>{
   return(
     <HomeStack.Navigator
       screenOptions={{
-        headerStyle:{
-          backgroundColor: 'black'
-        },
-        headerTintColor: '#352166',
-        headerTitleAlign: 'center',
-        headerTitleAllowFontScaling: true,
-        cardStyle: { backgroundColor: '#F6F6F6' },
-        headerBackTitle: 'Voltar',
-        headerBackTitleVisible: true,
-        headerBackTitleStyle: { fontSize: 15 },
+        headerShown: false
       }}
       >
         <HomeStack.Screen 
-          name="Início"
+          name="Home"
           component={Home}
           options={{headerTitle: 'Início'}}
         />
@@ -42,21 +36,12 @@ const TaskStack = createStackNavigator();
 const TaskTabNavigation = () =>{
   return(
     <TaskStack.Navigator
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: 'black'
-        },
-        headerTintColor: '#352166',
-        headerTitleAlign: 'center',
-        headerTitleAllowFontScaling: true,
-        cardStyle: { backgroundColor: '#F6F6F6' },
-        headerBackTitle: 'Voltar',
-        headerBackTitleVisible: true,
-        headerBackTitleStyle: { fontSize: 15 },
-      }}
+    screenOptions={{
+      headerShown: false
+    }}
       >
         <TaskStack.Screen 
-          name="Tarefas"
+          name="Tasks"
           component={Tasks}
           options={{headerTitle: 'Tarefas'}}
         />
@@ -68,21 +53,12 @@ const RuleStack = createStackNavigator();
 const RuleTabNavigation = () =>{
   return(
     <RuleStack.Navigator
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: 'black'
-        },
-        headerTintColor: '#352166',
-        headerTitleAlign: 'center',
-        headerTitleAllowFontScaling: true,
-        cardStyle: { backgroundColor: '#F6F6F6' },
-        headerBackTitle: 'Voltar',
-        headerBackTitleVisible: true,
-        headerBackTitleStyle: { fontSize: 15 },
-      }}
+    screenOptions={{
+      headerShown: false
+    }}
       >
         <RuleStack.Screen 
-          name="Regras"
+          name="Rules"
           component={Rules}
           options={{headerTitle: 'Regras'}}
         />
@@ -94,21 +70,12 @@ const BillStack = createStackNavigator();
 const BillTabNavigation = () =>{
   return(
     <BillStack.Navigator
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: 'black'
-        },
-        headerTintColor: '#352166',
-        headerTitleAlign: 'center',
-        headerTitleAllowFontScaling: true,
-        cardStyle: { backgroundColor: '#F6F6F6' },
-        headerBackTitle: 'Voltar',
-        headerBackTitleVisible: true,
-        headerBackTitleStyle: { fontSize: 15 },
-      }}
+    screenOptions={{
+      headerShown: false
+    }}
       >
         <BillStack.Screen 
-          name="Contas"
+          name="Bills"
           component={Bills}
           options={{headerTitle: 'Contas'}}
         />
@@ -120,21 +87,12 @@ const BuyStack = createStackNavigator();
 const BuyTabNavigation = () =>{
   return(
     <BuyStack.Navigator
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: 'black'
-        },
-        headerTintColor: '#352166',
-        headerTitleAlign: 'center',
-        headerTitleAllowFontScaling: true,
-        cardStyle: { backgroundColor: '#F6F6F6' },
-        headerBackTitle: 'Voltar',
-        headerBackTitleVisible: true,
-        headerBackTitleStyle: { fontSize: 15 },
-      }}
+    screenOptions={{
+      headerShown: false
+    }}
       >
         <BuyStack.Screen 
-          name="Compras"
+          name="Buys"
           component={Buys}
           options={{headerTitle: 'Compras'}}
         />
@@ -144,18 +102,57 @@ const BuyTabNavigation = () =>{
 
 const BottomTab = createBottomTabNavigator();
 const BottomTabNavigation = () => {
-
   return(
     <BottomTab.Navigator
-      initialRouteName="Home"
-      tabBarOptions={{
-        showLabel: false,
-        tabStyle: {
-          backgroundColor: '#6CB9AA',
-          paddingBottom: 10,
-          height: 62,
+
+      screenOptions={({ route }) => ({
+        tabBarLabelStyle: {
+          color: '#1D1843',
+          paddingBottom: 3
         },
-      }}
+        tabBarStyle:{
+          backgroundColor: '#f6f6f6',
+          borderBottomColor: "#f6f6f6",
+          
+        },
+        tabBarIcon: ({ focused, color, size }) => {
+          if (route.name === 'Início') {
+            return (
+              <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
+                <HomeIcon />
+              </View>
+            );
+          }
+          if (route.name === 'Regras') {
+            return (
+              <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
+                <RuleIcon />
+              </View>
+            );
+          }
+          if (route.name === 'Contas') {
+            return (
+              <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
+                <BillIcon />
+              </View>
+            );
+          }
+          if (route.name === 'Compras') {
+            return (
+              <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
+                <BuyIcon />
+              </View>
+            );
+          }
+          if (route.name === 'Tarefas') {
+            return (
+              <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
+                <TaskIcon />
+              </View>
+            );
+          }
+        },
+      })}
       >
         <BottomTab.Screen 
           name="Início"

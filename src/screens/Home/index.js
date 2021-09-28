@@ -1,11 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { View, Text } from 'react-native';
+import { Container, Title } from './styles';
 
 const Home = () => {
   return(
-    <View>
-      <Text>Home</Text>
-    </View>
+    <Container>
+      <Title>oiiiiiii</Title>
+    </Container>
   );
 }
 

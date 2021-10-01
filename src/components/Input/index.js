@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useField } from '@unform/core';
-import { IconButton } from 'react-native-paper';
 
 import {EyeOpen, EyeClose} from '../Icons';
 import {Container, Label, TextInput, Content} from './styles';

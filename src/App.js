@@ -34,7 +34,7 @@ const App = () => {
             >
               <Routes />
             </View>
-            <StatusBar style="inverted" />
+            <StatusBar style="dark" />
           </ThemeProvider>
         }
       </SafeAreaProvider>

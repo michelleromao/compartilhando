@@ -9,7 +9,7 @@ export const Theme = {
   green: "#5EBB93",
   orange: "#F99623",
   red: "#FF395A",
-  title: `fontFamily: "Nunito_700Bold"; fontSize: ${Number(24)}`,
-  text: `fontFamily: "Nunito_400Regular"; fontSize: ${Number(16)}`,
-  subtitle: `fontFamily: "Nunito_200ExtraLight"; fontSize: ${Number(14)}`,
+  title: `fontFamily: "Nunito_700Bold"; fontSize: 24px`,
+  text: `fontFamily: "Nunito_400Regular"; fontSize: 16px`,
+  subtitle: `fontFamily: "Nunito_200ExtraLight"; fontSize: 14px`,
 }

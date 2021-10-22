@@ -11,7 +11,6 @@ function Input({ name, label, onChangeText, password, show,...rest }) {
   const [pwd, setPwd] = useState(password);
 
   const handleShow = useCallback(() => {
-    console.log(pwd);
     setPwd(!pwd);
   }, [pwd])
 

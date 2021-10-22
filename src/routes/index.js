@@ -36,139 +36,144 @@ const RootNavigator = () => {
      >
        <Stack.Screen name="Root" component={TabBarNavigation}/>
        <Stack.Screen name="CreateSpace" component={CreateSpace} options={{
-          headerTitle: 'Criar',
+          headerTitle: 'Criar espaço',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
           },
-          headerTintColor: '#352166',
-          headerTitleAlign: 'center',
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
           headerTitleAllowFontScaling: true,
-          headerTitleStyle: { fontWeight: '600' },
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
           cardStyle: { backgroundColor: '#F6F6F6' },
-          headerBackTitle: 'Voltar',
-          headerBackTitleVisible: true,
-          headerBackTitleStyle: { fontSize: 15 },
+          headerBackTitleVisible: false,
           headerPressColorAndroid: 'transparent',
           headerBackImage: () => (
-            <Entypo name="chevron-left" size={20} color="#352166" />
-          ),
-        }}/>
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+          ),}}/>
         <Stack.Screen name="EnterSpace" component={EnterSpace} options={{
             headerTitle: 'Entrar',
             headerShown: true,
-            headerStyle: {
-              backgroundColor: '#F6F6F6',
-            },
-            headerTintColor: '#352166',
-            headerTitleAlign: 'center',
-            headerTitleAllowFontScaling: true,
-            headerTitleStyle: { fontWeight: '600' },
-            cardStyle: { backgroundColor: '#F6F6F6' },
-            headerBackTitle: 'Voltar',
-            headerBackTitleVisible: true,
-            headerBackTitleStyle: { fontSize: 15 },
-            headerPressColorAndroid: 'transparent',
-            headerBackImage: () => (
-              <Entypo name="chevron-left" size={20} color="#352166" />
-            ),
-        }}/>
+           headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+          ),}}/>
         <Stack.Screen name="Space" component={Space} options={{
           headerTitle: 'Espaço',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
           },
-          headerTintColor: '#352166',
-          headerTitleAlign: 'center',
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
           headerTitleAllowFontScaling: true,
-          headerTitleStyle: { fontWeight: '600' },
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
           cardStyle: { backgroundColor: '#F6F6F6' },
-          headerBackTitle: 'Voltar',
-          headerBackTitleVisible: true,
-          headerBackTitleStyle: { fontSize: 15 },
+          headerBackTitleVisible: false,
           headerPressColorAndroid: 'transparent',
           headerBackImage: () => (
-            <Entypo name="chevron-left" size={20} color="#352166" />
-          ),
-        }}/>
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+          ),}}/>
         <Stack.Screen name="FirstAccess" component={FirstAccess} options={{
           headerTitle: 'Boas vindas',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
           },
-          headerTintColor: '#352166',
-          headerTitleAlign: 'center',
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
           headerTitleAllowFontScaling: true,
-          headerTitleStyle: { fontWeight: '600' },
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24,  paddingLeft: "4%" },
           cardStyle: { backgroundColor: '#F6F6F6' },
-          headerBackTitle: 'Voltar',
-          headerBackTitleVisible: true,
-          headerBackTitleStyle: { fontSize: 15 },
           headerPressColorAndroid: 'transparent',
-          headerBackImage: () => (
-            <Entypo name="chevron-left" size={20} color="#352166" />
-          ),
-        }}/>
+          headerLeft: () => <></>
+          }}/>
 
         <Stack.Screen name="MyProfile" component={MyProfile} options={{
           headerTitle: 'Meu perfil',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
           },
-          headerTintColor: '#352166',
-          headerTitleAlign: 'center',
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
           headerTitleAllowFontScaling: true,
-          headerTitleStyle: { fontWeight: '600' },
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
           cardStyle: { backgroundColor: '#F6F6F6' },
-          headerBackTitle: 'Voltar',
-          headerBackTitleVisible: true,
-          headerBackTitleStyle: { fontSize: 15 },
+          headerBackTitleVisible: false,
           headerPressColorAndroid: 'transparent',
           headerBackImage: () => (
-            <Entypo name="chevron-left" size={20} color="#352166" />
-          ),
-        }}/>
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+          ),}}/>
         <Stack.Screen name="Personal" component={Personal} options={{
           headerTitle: 'Pessoal',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
           },
-          headerTintColor: '#352166',
-          headerTitleAlign: 'center',
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
           headerTitleAllowFontScaling: true,
-          headerTitleStyle: { fontWeight: '600' },
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
           cardStyle: { backgroundColor: '#F6F6F6' },
-          headerBackTitle: 'Voltar',
-          headerBackTitleVisible: true,
-          headerBackTitleStyle: { fontSize: 15 },
+          headerBackTitleVisible: false,
           headerPressColorAndroid: 'transparent',
           headerBackImage: () => (
-            <Entypo name="chevron-left" size={20} color="#352166" />
-          ),
-        }}/>
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+          ),}}/>
         <Stack.Screen name="Authentication" component={Authentication} options={{
           headerTitle: 'Autenticação',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
           },
-          headerTintColor: '#352166',
-          headerTitleAlign: 'center',
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
           headerTitleAllowFontScaling: true,
-          headerTitleStyle: { fontWeight: '600' },
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
           cardStyle: { backgroundColor: '#F6F6F6' },
-          headerBackTitle: 'Voltar',
-          headerBackTitleVisible: true,
-          headerBackTitleStyle: { fontSize: 15 },
+          headerBackTitleVisible: false,
           headerPressColorAndroid: 'transparent',
           headerBackImage: () => (
-            <Entypo name="chevron-left" size={20} color="#352166" />
-          ),
-        }}/>
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+          ),}}/>
     </Stack.Navigator>
   )
 }
@@ -215,20 +220,21 @@ const AuthStack = () => {
       screenOptions={{
         headerStyle: {
           backgroundColor: '#F6F6F6',
+          elevation: 0,
+          shadowOpacity: 0,
+          borderBottomWidth: 0,
+          height: 125
         },
-        headerTintColor: '#352166',
-        headerTitleAlign: 'center',
+        headerTintColor: '#1D1843',
+        headerTitleAlign: 'left',
         headerTitleAllowFontScaling: true,
-        headerTitleStyle: { fontWeight: '600' },
+        headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
         cardStyle: { backgroundColor: '#F6F6F6' },
-        headerBackTitle: 'Voltar',
-        headerBackTitleVisible: true,
-        headerBackTitleStyle: { fontSize: 15 },
+        headerBackTitleVisible: false,
         headerPressColorAndroid: 'transparent',
         headerBackImage: () => (
-          <Entypo name="chevron-left" size={20} color="#352166" />
-        ),
-      }}
+          <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}
     >
       <Stack.Screen
         name="Entrar"
@@ -238,7 +244,10 @@ const AuthStack = () => {
       <Stack.Screen
         name="CriarConta"
         component={SignUp}
-        options={{ headerTitle: 'Criar conta' }}
+        options={{ 
+          headerTitle: 'Criar conta',
+          headerShown: true,
+          }}
       />
     </Stack.Navigator>
   );
@@ -248,7 +257,7 @@ const Routes = () => {
   const [isLoading, setIsLoading] = useState(false);
   const[userToken, setUserToken] = useState(null);
 
-  const authContext = useMemo(() => {
+  const authContext = useMemo((uid) => {
     return {
       signIn: () => {
         setIsLoading(false);

@@ -43,7 +43,6 @@ const TaskTabNavigation = () =>{
         <TaskStack.Screen 
           name="Tasks"
           component={Tasks}
-          options={{headerTitle: 'Tarefas'}}
         />
       </TaskStack.Navigator>
   )
@@ -60,7 +59,6 @@ const RuleTabNavigation = () =>{
         <RuleStack.Screen 
           name="Rules"
           component={Rules}
-          options={{headerTitle: 'Regras'}}
         />
       </RuleStack.Navigator>
   )
@@ -77,7 +75,6 @@ const BillTabNavigation = () =>{
         <BillStack.Screen 
           name="Bills"
           component={Bills}
-          options={{headerTitle: 'Contas'}}
         />
       </BillStack.Navigator>
   )
@@ -94,7 +91,6 @@ const BuyTabNavigation = () =>{
         <BuyStack.Screen 
           name="Buys"
           component={Buys}
-          options={{headerTitle: 'Compras'}}
         />
       </BuyStack.Navigator>
   )
@@ -106,14 +102,18 @@ const BottomTabNavigation = () => {
     <BottomTab.Navigator
 
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarLabelStyle: {
           color: '#1D1843',
           paddingBottom: 3
         },
         tabBarStyle:{
-          backgroundColor: '#f6f6f6',
-          borderBottomColor: "#f6f6f6",
-          
+          backgroundColor: '#F6F6F6',
+          borderBottomColor: "#F6F6F6",
+          elevation: 0,
+          shadowOpacity: 0,
+          borderBottomWidth: 0,
+          borderTopWidth: 0
         },
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === 'Início') {

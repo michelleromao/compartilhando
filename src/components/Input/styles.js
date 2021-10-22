@@ -26,7 +26,7 @@ export const TextInput = styled.TextInput`
 `;
 
 export const Label = styled.Text`
-  ${props => props.theme.subtitle};
+  ${props => props.theme.text};
   color: ${props => props.theme.black};
   margin-bottom: 8px
 `;

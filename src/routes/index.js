@@ -14,6 +14,7 @@ import CreateSpace from '../screens/CreateSpace';
 import EnterSpace from '../screens/EnterSpace';
 import Space from '../screens/Space';
 import FirstAccess from '../screens/FirstAccess';
+import SpaceHome from "../screens/SpaceHome";
 
 import MyProfile from '../screens/MyProfile';
 import Personal from '../screens/Personal';
@@ -114,6 +115,9 @@ const RootNavigator = () => {
           cardStyle: { backgroundColor: '#F6F6F6' },
           headerPressColorAndroid: 'transparent',
           headerLeft: () => <></>
+          }}/>
+         <Stack.Screen name="SpaceHome" component={SpaceHome} options={{
+          headerShown: false,
           }}/>
 
         <Stack.Screen name="MyProfile" component={MyProfile} options={{

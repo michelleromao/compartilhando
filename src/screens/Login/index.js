@@ -22,10 +22,6 @@ const Login = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = useCallback(data => {
-    data = {
-      email: 'leonardo123k@gmail.com',
-      password: 'tcc123456'
-    }
     if(data.email && data.password){
       setLoading(true);
       auth.signInWithEmailAndPassword(data.email, data.password)

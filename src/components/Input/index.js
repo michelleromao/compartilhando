@@ -5,7 +5,7 @@ import { useField } from '@unform/core';
 import {EyeOpen, EyeClose} from '../Icons';
 import {Container, Label, TextInput, Content} from './styles';
 
-function Input({ name, label, onChangeText, password, show,...rest }) {
+function Input({ name, label, onChangeText, password, show, textarea, ...rest }) {
   const inputRef = useRef(null);
   const { fieldName, registerField, defaultValue, error } = useField(name);
   const [pwd, setPwd] = useState(password);
@@ -53,23 +53,40 @@ function Input({ name, label, onChangeText, password, show,...rest }) {
   return (
     <Container>
       {label && <Label>{label}</Label>}
-      <Content>
+      {textarea ? 
+       <Content textarea>
         <TextInput
           ref={inputRef}
           onChangeText={handleChangeText}
           defaultValue={defaultValue}
           secureTextEntry={pwd ? true : false}
+          multiline = {true}
+          numberOfLines = {4}
+          style={{textAlignVertical: 'top'}}
+          textarea
           {...rest}
-        />
-        {password ? 
-          <TouchableOpacity
-            style={{width: "13%", height: "100%", justifyContent: "center"}}
-            onPress={() => handleShow()}
-          >
-            {pwd ? <EyeOpen /> : <EyeClose />}
-          </TouchableOpacity>
-        : <></>}
-      </Content>
+          />
+        </Content>
+      : 
+        <Content >
+          <TextInput
+            ref={inputRef}
+            onChangeText={handleChangeText}
+            defaultValue={defaultValue}
+            secureTextEntry={pwd ? true : false}
+            style={{textAlignVertical: 'top'}}
+            {...rest}
+          />
+          {password ? 
+            <TouchableOpacity
+              style={{width: "13%", height: "100%", justifyContent: "center"}}
+              onPress={() => handleShow()}
+            >
+              {pwd ? <EyeOpen /> : <EyeClose />}
+            </TouchableOpacity>
+          : <></>}
+        </Content>
+        }
     </Container>
    )
   }

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback, useState } from 'react';
+import React from 'react';
 import {Container, Text} from './styles';
 
 function Button({ color, text, action,...rest }) {

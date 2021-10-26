@@ -1,15 +1,6 @@
 import React from "react";
 
-import Svg, {
-  Path,
-  G,
-  Defs,
-  ClipPath,
-  Rect,
-  Pattern,
-  Use,
-  Image,
-} from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
 export function Logo() {
   return (

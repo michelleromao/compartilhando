@@ -1,10 +1,8 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator, useCardAnimation } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '../screens/Home';
 import Tasks from '../screens/Tasks';
@@ -43,7 +41,6 @@ const TaskTabNavigation = () =>{
         <TaskStack.Screen 
           name="Tasks"
           component={Tasks}
-          options={{headerTitle: 'Tarefas'}}
         />
       </TaskStack.Navigator>
   )
@@ -60,7 +57,6 @@ const RuleTabNavigation = () =>{
         <RuleStack.Screen 
           name="Rules"
           component={Rules}
-          options={{headerTitle: 'Regras'}}
         />
       </RuleStack.Navigator>
   )
@@ -77,7 +73,6 @@ const BillTabNavigation = () =>{
         <BillStack.Screen 
           name="Bills"
           component={Bills}
-          options={{headerTitle: 'Contas'}}
         />
       </BillStack.Navigator>
   )
@@ -94,7 +89,6 @@ const BuyTabNavigation = () =>{
         <BuyStack.Screen 
           name="Buys"
           component={Buys}
-          options={{headerTitle: 'Compras'}}
         />
       </BuyStack.Navigator>
   )
@@ -106,14 +100,18 @@ const BottomTabNavigation = () => {
     <BottomTab.Navigator
 
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarLabelStyle: {
           color: '#1D1843',
           paddingBottom: 3
         },
         tabBarStyle:{
-          backgroundColor: '#f6f6f6',
-          borderBottomColor: "#f6f6f6",
-          
+          backgroundColor: '#F6F6F6',
+          borderBottomColor: "#F6F6F6",
+          elevation: 0,
+          shadowOpacity: 0,
+          borderBottomWidth: 0,
+          borderTopWidth: 0
         },
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === 'Início') {

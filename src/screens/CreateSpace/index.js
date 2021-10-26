@@ -28,11 +28,11 @@ const CreateSpace = () => {
       );
     }else {
       const response = await AsyncStorage.getItem('@storage_uid');
-      const docRef = firestore.collection('homes').doc();
       const home_id =  uuidv4();
+      const docRef = firestore.collection('homes').doc(home_id);
       await docRef.set({
         id: home_id,
-        creator_ud: response,
+        creator_id: response,
         name: data.name,
         created_at: Date.now()
       });
@@ -42,7 +42,7 @@ const CreateSpace = () => {
         home_id: home_id,
       })
       setLoading(false);
-      navigation.navigate("Home");
+      navigation.navigate("SpaceHome");
     }
   }, [])
 

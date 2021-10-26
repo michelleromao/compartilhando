@@ -16,10 +16,10 @@ export const Container = styled.TouchableOpacity`
              border-color: ${props.theme.blue};`
              };
   border-radius: 15px;
-  height: 60px;
+  height: ${props => props.size ? '30px' : '60px'};
 `;
 
 export const Text = styled.Text`
   color: ${props =>  props.theme.blue};
-  ${props => props.theme.title};
+  ${props => props.size ? props.theme.text : props.theme.title};
 `;

@@ -40,8 +40,10 @@ const Home = () => {
   }, [userUid, navigation]);
 
   useEffect(() => {
-    handleCheckFirstAcess();
-  }, [handleCheckFirstAcess])
+    if(isFocused){
+      handleCheckFirstAcess();
+    }
+  }, [isFocused, handleCheckFirstAcess])
 
 
   return(

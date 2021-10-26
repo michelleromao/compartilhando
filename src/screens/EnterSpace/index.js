@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import 'react-native-get-random-values';
 import { View, ScrollView, ActivityIndicator, Alert, KeyboardAvoidingView } from 'react-native';

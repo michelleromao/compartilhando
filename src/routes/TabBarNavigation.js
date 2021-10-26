@@ -1,10 +1,8 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator, useCardAnimation } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '../screens/Home';
 import Tasks from '../screens/Tasks';

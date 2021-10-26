@@ -112,7 +112,8 @@ const Rules = () => {
                   key={rule.id}
                   text={rule.description} 
                   owner={rule.creator_name} 
-                  disabled={rule.owner ? false : true}/>
+                  disabled={rule.owner ? false : true}
+                  onPress={() => navigation.navigate("EditRule", {id:rule.id})}/>
               )) : <></>}
             </Content>
           </ScrollView>

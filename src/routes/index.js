@@ -1,12 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { SafeAreaView, View, ActivityIndicator, Text } from 'react-native';
+import { SafeAreaView, View, ActivityIndicator } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import TabBarNavigation from './TabBarNavigation';
 import { AuthContext } from './context';
 import { Entypo } from '@expo/vector-icons';
-
 
 import Login from '../screens/Login';
 import SignUp from '../screens/SignUp';
@@ -21,6 +20,7 @@ import Personal from '../screens/Personal';
 import Authentication from '../screens/Authentication';
 
 import CreateRule from '../screens/Rules/Create';
+import EditRule from '../screens/Rules/Edit';
 
 import Remove from '../screens/Modals/Remove';
 
@@ -196,6 +196,26 @@ const RootNavigator = () => {
           headerBackImage: () => (
             <Entypo name="chevron-left" size={32} color="#1D1843" />
         ),}}/>
+        <Stack.Screen name="EditRule" component={EditRule} options={{
+          headerTitle: 'Editar regra',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
     </Stack.Navigator>
   )
 }
@@ -204,9 +224,11 @@ const ModalNavigator = () => {
   return(
     <ModalStack.Navigator
      screenOptions={{
+        presentation: "transparentModal",
         headerShown: false,
         cardStyle: { backgroundColor: 'transparent' },
         cardOverlayEnabled: true,
+        
         cardStyleInterpolator: ({ current: { progress } }) => ({
           cardStyle: {
             opacity: progress.interpolate({

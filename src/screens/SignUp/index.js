@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect, useContext, useRef } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation, useRoute } from '@react-navigation/native';
 
 import 'firebase/auth';
 import 'firebase/firestore'
@@ -12,13 +11,11 @@ import { auth, firestore } from '../../services/firebase';
 import { AuthContext } from '../../routes/context';
 
 import { Tip } from './styles';
-import { Logo } from '../../components/Icons/index';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 const SignUp = () => {
   const formRef = useRef(null);
-  const route = useRoute();
   const { signUp } = useContext(AuthContext);
   const [uidUser, setUidUser] = useState('');
   const [user,setUser] = useState({});

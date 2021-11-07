@@ -12,4 +12,5 @@ export const Theme = {
   title: `fontFamily: "Nunito_700Bold"; fontSize: 24px`,
   text: `fontFamily: "Nunito_400Regular"; fontSize: 16px`,
   subtitle: `fontFamily: "Nunito_200ExtraLight"; fontSize: 14px`,
+  textBold: `fontFamily: "Nunito_700Bold"; fontSize: 16px`,
 }

@@ -23,7 +23,12 @@ import Authentication from '../screens/Authentication';
 import CreateRule from '../screens/Rules/Create';
 import EditRule from '../screens/Rules/Edit';
 
+import CreateBuy from '../screens/Buys/Create';
+import EditBuy from '../screens/Buys/Edit';
+
 import Remove from '../screens/Modals/Remove';
+import Purchase from '../screens/Modals/Purchase';
+
 
 
 const Stack = createStackNavigator();
@@ -220,6 +225,46 @@ const RootNavigator = () => {
           headerBackImage: () => (
             <Entypo name="chevron-left" size={32} color="#1D1843" />
         ),}}/>
+         <Stack.Screen name="CreateBuy" component={CreateBuy} options={{
+          headerTitle: 'Criar compra',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
+         <Stack.Screen name="EditBuy" component={EditBuy} options={{
+          headerTitle: 'Editar compra',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
     </Stack.Navigator>
   )
 }
@@ -228,11 +273,11 @@ const ModalNavigator = () => {
   return(
     <ModalStack.Navigator
      screenOptions={{
+       
         presentation: "transparentModal",
         headerShown: false,
         cardStyle: { backgroundColor: 'transparent' },
         cardOverlayEnabled: true,
-        
         cardStyleInterpolator: ({ current: { progress } }) => ({
           cardStyle: {
             opacity: progress.interpolate({
@@ -249,7 +294,7 @@ const ModalNavigator = () => {
           },
         }),
       }}
-      mode="modal"
+      
       >
         <ModalStack.Screen
           name="Inicio"
@@ -257,6 +302,8 @@ const ModalNavigator = () => {
           options={{ headerShown: false }}
         />
        <ModalStack.Screen name="Remove" component={Remove} />
+       <ModalStack.Screen name="PurchaseItem" component={Purchase} />
+       
     </ModalStack.Navigator>
   )
 }

@@ -13,7 +13,7 @@ const Remove = () => {
   const [type, setType] = useState(routes.params.type === 'rule' ? "regra" : 
                                    routes.params.type === 'task' ? "tarefa" : 
                                    routes.params.type === 'bill' ? "conta" :
-                                   routes.params.type === 'buy' ? "compra" : 
+                                   routes.params.type === 'buy' ? "item" : 
                                    routes.params.type === 'account' ? "sua conta" : 
                                    routes.params.type === 'space' ? "espaço" : "")
 
@@ -28,7 +28,7 @@ const Remove = () => {
       const billRef = await firestore.collection('bills').doc(routes.params.id).delete();
       navigation.navigate("Bills");
     }else if(routes.params.type  === 'buy'){
-      const buyRef = await firestore.collection('payments').doc(routes.params.id).delete();
+      const buyRef = await firestore.collection('purchase_item').doc(routes.params.id).delete();
       navigation.navigate("Buys");
     }
   }, [routes, navigation])
@@ -39,7 +39,7 @@ const Remove = () => {
         <Title>Excluir {type}</Title>
         {routes.params.description && 
           <Description>{routes.params.description}</Description>}
-        <Text>Você deseja excluir essa {type}? Não será possível recuperá-la.</Text>
+        <Text>Você deseja excluir {type}? Não será possível recuperá-la.</Text>
 
         <GroupButton>
           <ViewButton>

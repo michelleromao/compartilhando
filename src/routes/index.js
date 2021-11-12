@@ -26,6 +26,10 @@ import EditRule from '../screens/Rules/Edit';
 import CreateBuy from '../screens/Buys/Create';
 import EditBuy from '../screens/Buys/Edit';
 
+import CreateTask from '../screens/Tasks/Create';
+import EditTask from '../screens/Tasks/Edit';
+
+
 import Remove from '../screens/Modals/Remove';
 import Purchase from '../screens/Modals/Purchase';
 
@@ -247,6 +251,46 @@ const RootNavigator = () => {
         ),}}/>
          <Stack.Screen name="EditBuy" component={EditBuy} options={{
           headerTitle: 'Editar compra',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
+         <Stack.Screen name="CreateTask" component={CreateTask} options={{
+          headerTitle: 'Criar tarefa',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
+         <Stack.Screen name="EditTask" component={EditTask} options={{
+          headerTitle: 'Editar tarefa',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',

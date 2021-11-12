@@ -227,12 +227,12 @@ export function HomeIcon() {
   );
 }
 
-export function Lavar() {
+export function Lavar({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="46"
-      height="44"
+      width={width} //46
+      height={height} //44
       fill="none"
       viewBox="0 0 46 44"
     >
@@ -255,12 +255,12 @@ export function Lavar() {
     </Svg>
   );
 }
-export function Lixo() {
+export function Lixo({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="38"
-      height="44"
+      width={width} //38
+      height={height} //44
       fill="none"
       viewBox="0 0 38 44"
     >
@@ -273,12 +273,12 @@ export function Lixo() {
     </Svg>
   );
 }
-export function Faxinar() {
+export function Faxinar({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="27"
-      height="44"
+      width={width} //27
+      height={height} //44
       fill="none"
       viewBox="0 0 27 44"
     >
@@ -291,12 +291,12 @@ export function Faxinar() {
     </Svg>
   );
 }
-export function Limpar() {
+export function Limpar({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="35"
-      height="44"
+      width={width} //35
+      height={height} //44
       fill="none"
       viewBox="0 0 35 44"
     >
@@ -309,12 +309,12 @@ export function Limpar() {
     </Svg>
   );
 }
-export function FaxinaGeral() {
+export function FaxinaGeral({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="41"
-      height="44"
+      width={width} //41
+      height={height} //44
       fill="none"
       viewBox="0 0 41 44"
     >
@@ -328,12 +328,12 @@ export function FaxinaGeral() {
   );
 }
 
-export function Outros() {
+export function Outros({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="38"
-      height="41"
+      width={width} //38
+      height={height} //41
       fill="none"
       viewBox="0 0 38 41"
     >
@@ -346,12 +346,12 @@ export function Outros() {
     </Svg>
   );
 }
-export function Agua() {
+export function Agua({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="33"
-      height="41"
+      width={width} //33
+      height={height} //41
       fill="none"
       viewBox="0 0 33 41"
     >
@@ -364,12 +364,12 @@ export function Agua() {
     </Svg>
   );
 }
-export function Internet() {
+export function Internet({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="43"
-      height="41"
+      width={width} //43
+      height={height} //41
       fill="none"
       viewBox="0 0 43 41"
     >
@@ -386,12 +386,12 @@ export function Internet() {
     </Svg>
   );
 }
-export function Energia() {
+export function Energia({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="41"
+      width={width} //28
+      height={height} //41
       fill="none"
       viewBox="0 0 28 41"
     >
@@ -408,12 +408,12 @@ export function Energia() {
     </Svg>
   );
 }
-export function Aluguel() {
+export function Aluguel({ width, height }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="43"
-      height="43"
+      width={width} //43
+      height={height} //43
       fill="none"
       viewBox="0 0 43 43"
     >

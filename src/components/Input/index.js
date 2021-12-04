@@ -17,9 +17,7 @@ function Input({ name, label, onChangeText, password, show, textarea, ...rest })
   useEffect(() => {
     inputRef.current.value = defaultValue;
   }, [defaultValue]);
-  useEffect(() => {
-    if (inputRef.current) inputRef.current.value = defaultValue;
-  }, [defaultValue]);
+
   useEffect(() => {
     registerField({
       name: fieldName,

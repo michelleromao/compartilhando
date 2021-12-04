@@ -171,7 +171,7 @@ const Buys = () => {
                           item={buy.item} 
                           owner={buy.creator_name} 
                           logged={useruid}
-                          disabled={buy.owner ? false : true}
+                          disabled={true}
                           statusItem={buy.status}
                           buyer_id={buy.buyer_id}
                           onPress={() => navigation.navigate("EditBuy", {id:buy.id})}/> 

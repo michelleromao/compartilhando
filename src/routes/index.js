@@ -32,6 +32,7 @@ import EditTask from '../screens/Tasks/Edit';
 
 import Remove from '../screens/Modals/Remove';
 import Purchase from '../screens/Modals/Purchase';
+import DoItem from '../screens/Modals/DoItem';
 
 
 
@@ -347,6 +348,8 @@ const ModalNavigator = () => {
         />
        <ModalStack.Screen name="Remove" component={Remove} />
        <ModalStack.Screen name="PurchaseItem" component={Purchase} />
+       <ModalStack.Screen name="DoItem" component={DoItem} />
+
        
     </ModalStack.Navigator>
   )

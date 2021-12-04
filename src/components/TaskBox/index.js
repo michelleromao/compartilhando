@@ -16,7 +16,7 @@ function TaskBox({ id, doer_id, responsible_id, statusItem, logged, task, freque
 
   const handleGetDoneDate = useCallback( () => {
     if(done !== undefined){
-      setDoneDate(format(new Date(Number(done)), 'dd/MM'))
+      setDoneDate(format(new Date(Number(done)), 'dd/MM/yyyy'))
     }
   }, [])
 

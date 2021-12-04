@@ -22,7 +22,9 @@ const Remove = () => {
       const ruleRef = await firestore.collection('rules').doc(routes.params.id).delete();
       navigation.navigate("Rules");
     }else if(routes.params.type  === 'task'){
-      const taskRef = await firestore.collection('tasks').doc(routes.params.id).delete();
+      const taskRef = await firestore.collection('tasks').doc(routes.params.id).update({
+        active: false
+      });
       navigation.navigate("Tasks");
     }else if(routes.params.type  === 'bill'){
       const billRef = await firestore.collection('bills').doc(routes.params.id).delete();

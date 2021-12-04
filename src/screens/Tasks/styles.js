@@ -72,8 +72,8 @@ export const ContainerFilter = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  height: 60px;
-  margin-top: 32px;
+  height: 85px;
+  margin-top: 24px;
 `;
 
 export const ContentFilter = styled.TouchableOpacity`

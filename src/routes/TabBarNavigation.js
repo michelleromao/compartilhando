@@ -128,13 +128,6 @@ const BottomTabNavigation = () => {
               </View>
             );
           }
-          if (route.name === 'Contas') {
-            return (
-              <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
-                <BillIcon />
-              </View>
-            );
-          }
           if (route.name === 'Compras') {
             return (
               <View style={focused ? { opacity: 1 } : { opacity: 0.5 }}>
@@ -161,9 +154,6 @@ const BottomTabNavigation = () => {
         <BottomTab.Screen 
           name="Regras"
           component={RuleTabNavigation}/>
-        <BottomTab.Screen 
-          name="Contas"
-          component={BillTabNavigation}/>
         <BottomTab.Screen 
           name="Compras"
           component={BuyTabNavigation}/>

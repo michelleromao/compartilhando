@@ -13,6 +13,7 @@ import SignUp from '../screens/SignUp';
 import CreateSpace from '../screens/CreateSpace';
 import EnterSpace from '../screens/EnterSpace';
 import Space from '../screens/Space';
+import EditSpace from '../screens/Space/Edit';
 import FirstAccess from '../screens/FirstAccess';
 import SpaceHome from "../screens/SpaceHome";
 
@@ -108,6 +109,7 @@ const RootNavigator = () => {
           headerBackImage: () => (
             <Entypo name="chevron-left" size={32} color="#1D1843" />
           ),}}/>
+          
         <Stack.Screen name="FirstAccess" component={FirstAccess} options={{
           headerTitle: 'Boas vindas',
           headerShown: true,
@@ -129,7 +131,26 @@ const RootNavigator = () => {
          <Stack.Screen name="SpaceHome" component={SpaceHome} options={{
           headerShown: false,
           }}/>
-
+        <Stack.Screen name="EditSpace" component={EditSpace} options={{
+          headerTitle: 'Editar',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
         <Stack.Screen name="MyProfile" component={MyProfile} options={{
           headerTitle: 'Meu perfil',
           headerShown: true,

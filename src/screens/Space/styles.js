@@ -1,9 +1,19 @@
 import styled from 'styled-components/native';
 
-export const Welcome = styled.Text`
+export const Delete = styled.TouchableOpacity`
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: ${props => props.theme.red};
+  justify-content: center;
+  align-items: center;
+  margin-right: 15%;
+`;
+
+export const Close = styled.Text`
   ${props => props.theme.title};
-  margin-top: 16px;
   color: ${props => props.theme.blue};
+  margin-top: -10%;
 `;
 
 export const Invite = styled.Text`
@@ -16,4 +26,3 @@ export const Code = styled.Text`
   color: ${props => props.theme.black};
   text-align: center;
 `;
-

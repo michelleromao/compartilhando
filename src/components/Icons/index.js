@@ -2,12 +2,12 @@ import React from "react";
 
 import Svg, { Path } from 'react-native-svg';
 
-export function Logo() {
+export function Logo({width, height}) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
-      width="79"
-      height="79"
+      width={width ?? "79"}
+      height={height ?? "79"}
       fill="none"
       viewBox="0 0 79 79"
     >

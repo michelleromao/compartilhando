@@ -32,6 +32,12 @@ export const Description = styled.Text`
   margin-top: 8px;
 `;
 
+export const Description2 = styled.Text`
+  ${props => props.theme.subtitle};
+  color: ${props => props.theme.black};
+  margin-top: 8px;
+`;
+
 export const Text = styled.Text`
   ${props => props.theme.text};
   color: ${props => props.theme.black};

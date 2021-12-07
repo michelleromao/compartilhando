@@ -25,7 +25,7 @@ import { Container,
 import TaskBox from '../../components/TaskBox';
 import Category from '../../components/Categories';
 import { FaxinaGeral, Faxinar, Lavar, Limpar, Lixo, Outros  } from '../../components/Icons';
-import { ptBR } from 'date-fns/locale';
+
 
 const wait = (timeout) => {
   return new Promise(resolve => setTimeout(resolve, timeout));

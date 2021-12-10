@@ -1,13 +1,16 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useContext } from 'react';
 import{ useNavigation, useRoute } from '@react-navigation/native';
 import 'firebase/firestore'
-import { firestore } from '../../../services/firebase';
+import 'firebase/auth'
+import { auth, firestore } from '../../../services/firebase';
+import { AuthContext } from '../../../routes/context';
 
 import {Container, Content, Title, Description, GroupButton, ViewButton, Text, Description2} from './styles';
 
 import Button from '../../../components/Button';
 
 const Remove = () => {
+  const { signOut } = useContext(AuthContext);
   const navigation = useNavigation();
   const routes = useRoute();
   const [type, setType] = useState(routes.params.type === 'rule' ? "regra" : 
@@ -60,6 +63,16 @@ const Remove = () => {
         home_id: ""
       });
       navigation.navigate("Home");
+    }else if(routes.params.type === "account"){
+      const userRef = await firestore.collection('users').doc(routes.params.id).update({
+        email: "",
+        name: "Usuário excluido",
+        username: ""
+      });
+      const user = auth.currentUser;
+      user.delete().then(() => {
+        signOut()
+      }).catch(err => console.log(err))
     }
   }, [routes, navigation])
 

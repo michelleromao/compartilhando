@@ -18,8 +18,9 @@ import FirstAccess from '../screens/FirstAccess';
 import SpaceHome from "../screens/SpaceHome";
 
 import MyProfile from '../screens/MyProfile';
-import Personal from '../screens/Personal';
-import Authentication from '../screens/Authentication';
+import Personal from '../screens/MyProfile/Personal';
+import Authentication from '../screens/MyProfile/Authentication';
+import EditEmail from '../screens/MyProfile/Authentication/EditEmail';
 
 import CreateRule from '../screens/Rules/Create';
 import EditRule from '../screens/Rules/Edit';
@@ -193,6 +194,26 @@ const RootNavigator = () => {
           ),}}/>
         <Stack.Screen name="Authentication" component={Authentication} options={{
           headerTitle: 'Autenticação',
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: '#F6F6F6',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
+            height: 125
+          },
+          headerTintColor: '#1D1843',
+          headerTitleAlign: 'left',
+          headerTitleAllowFontScaling: true,
+          headerTitleStyle: { fontWeight: '600', fontFamily: "Nunito_700Bold", fontSize: 24 },
+          cardStyle: { backgroundColor: '#F6F6F6' },
+          headerBackTitleVisible: false,
+          headerPressColorAndroid: 'transparent',
+          headerBackImage: () => (
+            <Entypo name="chevron-left" size={32} color="#1D1843" />
+        ),}}/>
+         <Stack.Screen name="EditEmail" component={EditEmail} options={{
+          headerTitle: 'Alterar e-mail',
           headerShown: true,
           headerStyle: {
             backgroundColor: '#F6F6F6',

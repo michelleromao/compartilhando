@@ -127,7 +127,6 @@ const Login = ({ navigation }) => {
                 }}
                 onPress={() => {("pressed")}}
               >
-                <ForgotPassword> Esqueci a senha </ForgotPassword>
               </TouchableOpacity>
             </View>
             <Button 

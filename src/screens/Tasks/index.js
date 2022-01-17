@@ -7,7 +7,7 @@ import { firestore } from '../../services/firebase';
 
 import { ScrollView, ActivityIndicator, View, RefreshControl } from 'react-native';
 
-import { startOfToday, format, startOfDay, isEqual } from 'date-fns'
+import { startOfToday, format, startOfDay, isEqual, differenceInDays } from 'date-fns'
 
 import { Container, 
       Title, 
@@ -21,7 +21,9 @@ import { Container,
       Bold, 
       Color,
       ContainerFilter,
-      ContentFilter} from './styles';
+      ContentFilter,
+      FilterText,
+      LabelFilter} from './styles';
 import TaskBox from '../../components/TaskBox';
 import Category from '../../components/Categories';
 import { FaxinaGeral, Faxinar, Lavar, Limpar, Lixo, Outros  } from '../../components/Icons';
@@ -152,7 +154,6 @@ const Tasks = () => {
     doesList.sort(function(a,b){
       return new Date(Number(a.created_at)) - new Date(Number(b.created_at));
     });
-    console.log(doesList);
     setChecked(doesList.length)
     setDoes(doesList);
   }, [])
@@ -199,7 +200,6 @@ const Tasks = () => {
 
     var dayOfToday = format(startOfToday(), "dd");
     var dayOfWeekToday = format(startOfToday(), "cccc").toLowerCase();
-
     let doesList = [];
     const snapshotDoes = await firestore.collection('does').get();
     snapshotDoes.forEach(doc => {
@@ -215,9 +215,11 @@ const Tasks = () => {
 
     let newTaskList = [];
     taskList.map((task) => {
-      if(Number(task.day_of_month) == Number(dayOfToday) 
-          || task.day_of_week ===  dayOfWeekToday 
-          || task.frequency === 'daily'){
+      if(task.day_of_week ===  dayOfWeekToday
+          || task.frequency === 'daily'
+          || (Number(task.day_of_month) !== 0
+              && (Number(task.day_of_month) == Number(dayOfToday) 
+              || Number(task.day_of_month) <= (Number(dayOfToday) + 3)))){
         newTaskList.push(task)
       }
     })
@@ -229,7 +231,8 @@ const Tasks = () => {
             if(task.id === does.task_id){
               let startOfDoes = startOfDay(new Date(Number(does.created_at)))
               let startOfToday = startOfDay(new Date())
-              if(isEqual(startOfDoes, startOfToday)){
+              let difference = differenceInDays(startOfDoes, startOfToday);
+              if(isEqual(startOfDoes, startOfToday) || (difference === -3 || difference >= -3 )){
                 newTaskList.splice(i, 1)
               }
             }
@@ -312,38 +315,57 @@ const Tasks = () => {
           <TabBar>
             <Collumn active={view === 1 ? true : false}>
             <Tab onPress={() =>  setView(1)} disabled={view === 1 ? true : false}>
-            {view === 1 ? <CountText><Bold>{toCheck}</Bold> Para fazer</ CountText> : <></>}
+            <CountText active={view === 1 ? true : false}><Bold>{toCheck}</Bold> Para fazer</ CountText>
               <Color active={view === 1 ? true : false} />
             </Tab>
             </Collumn>
             <Collumn active={view === 2 ? true : false}>
               <Tab onPress={() => setView(2)} disabled={view === 2 ? true : false}>
-              {view === 2 ? <CountText><Bold>{checked}</Bold> Feito</ CountText> : <></>}
+             <CountText active={view === 2 ? true : false}><Bold>{checked}</Bold> Feito</ CountText>
                 <Color active={view === 2 ? true : false}  />
               </Tab>
             </Collumn>
           </TabBar>
 
           <ContainerFilter>
+            <FilterText>Filtrar: </FilterText>
             <ScrollView showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} horizontal> 
-              <ContentFilter onPress={() => handleFilter("faxinar")} active={filter === "faxinar" ? true : false}>
-                <Faxinar width={27} height={44}/>
-              </ContentFilter>
-              <ContentFilter onPress={() => handleFilter('faxinarGeral')} active={filter === "faxinarGeral" ? true : false}>
-                <FaxinaGeral width={41} height={44}/>
-              </ContentFilter>
+              <View>
+                <ContentFilter onPress={() => handleFilter("faxinar")} active={filter === "faxinar" ? true : false}>
+                  <Faxinar width={27} height={44}/>
+                </ContentFilter>
+                <LabelFilter active={filter === "faxinar" ? true : false}>Faxinar</LabelFilter>
+              </View> 
+              <View>
+                <ContentFilter onPress={() => handleFilter('faxinarGeral')} active={filter === "faxinarGeral" ? true : false}>
+                  <FaxinaGeral width={41} height={44}/>
+                </ContentFilter>
+                <LabelFilter active={filter === "faxinarGeral" ? true : false}>Faxina Geral</LabelFilter>
+              </View>
+              <View>
               <ContentFilter onPress={() => handleFilter('lavar')} active={filter === "lavar" ? true : false}>
                 <Lavar width={45.71} height={43.26}/>
               </ContentFilter>
+              <LabelFilter active={filter === "lavar" ? true : false}>Lavar</LabelFilter>
+              </View>
+              <View>
               <ContentFilter onPress={() => handleFilter('limpar')} active={filter === "limpar" ? true : false}>
                 <Limpar width={33.65} height={43.26}/>
               </ContentFilter>
+              <LabelFilter active={filter === "limpar" ? true : false}>Limpar</LabelFilter>
+              </View>
+              <View>
               <ContentFilter onPress={() => handleFilter('lixo')} active={filter === "lixo" ? true : false}>
                 <Lixo width={38} height={43.26}/>
               </ContentFilter>
+              <LabelFilter active={filter === "lixo" ? true : false}>Lixo</LabelFilter>
+              </View>
+              <View>
               <ContentFilter onPress={() => handleFilter('outro')} active={filter === "outro" ? true : false}>
                 <Outros width={38} height={41}/>
               </ContentFilter>
+              <LabelFilter active={filter === "outro" ? true : false}>Outro</LabelFilter>
+              </View>
             </ScrollView>
           </ContainerFilter>
           

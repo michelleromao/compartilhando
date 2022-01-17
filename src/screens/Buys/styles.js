@@ -40,7 +40,6 @@ export const Content = styled.View`
   width: 100%;
 `; 
 
-
 export const TabBar = styled.View`
   width: 100%;
   flex-direction: row;
@@ -49,21 +48,22 @@ export const TabBar = styled.View`
   margin-top: 24px;
 `;
 export const Collumn = styled.View`
-  width: ${props => props.active ? `78%` : `20%`};
-  align-items: flex-start;
+  width: 49%;
 `;
 export const Tab = styled.TouchableOpacity`
   width: 100%;
 `;
 export const Color = styled.View`
   background-color: ${props => props.active ? props.theme.yellow :  props.theme.lightBlue};
-  height: 10px;
+  opacity: ${props => props.active ? 1 :  0.5};
+  height: 6px;
   border-radius: 2px;
   margin-top: 8px;
 `;
 
 export const CountText = styled.Text`
   ${props => props.theme.text};
+  opacity: ${props => props.active ? 1 :  0.3};
 `;
 export const Bold = styled.Text`
   ${props => props.theme.textBold};

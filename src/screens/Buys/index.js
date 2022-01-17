@@ -121,13 +121,13 @@ const Buys = () => {
           <TabBar>
             <Collumn active={view === 1 ? true : false}>
             <Tab onPress={() =>  setView(1)} disabled={view === 1 ? true : false}>
-            {view === 1 ? <CountText><Bold>{toCheck}</Bold> Para comprar</ CountText> : <></>}
+            <CountText active={view === 1 ? true : false}><Bold>{toCheck}</Bold> Para comprar</ CountText>
               <Color active={view === 1 ? true : false} />
             </Tab>
             </Collumn>
             <Collumn active={view === 2 ? true : false}>
               <Tab onPress={() => setView(2)} disabled={view === 2 ? true : false}>
-              {view === 2 ? <CountText><Bold>{checked}</Bold> Comprados</ CountText> : <></>}
+              <CountText active={view === 2 ? true : false}><Bold>{checked}</Bold> Comprados</ CountText>
                 <Color active={view === 2 ? true : false}  />
               </Tab>
             </Collumn>

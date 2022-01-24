@@ -1,0 +1,16 @@
+export const Theme = {
+  white: "#F6F6F6",
+  blue: "#1D1843",
+  lightBlue: "#8E8BA1",
+  yellow: "#FFB729",
+  lightYellow: "#FFDB94",
+  black: "#1F1F1F",
+  lightBlack: "#8A8A8A", 
+  green: "#5EBB93",
+  orange: "#F99623",
+  red: "#FF395A",
+  title: `fontFamily: "Nunito_700Bold"; fontSize: 24px`,
+  text: `fontFamily: "Nunito_400Regular"; fontSize: 16px`,
+  subtitle: `fontFamily: "Nunito_200ExtraLight"; fontSize: 14px`,
+  textBold: `fontFamily: "Nunito_700Bold"; fontSize: 16px`,
+}

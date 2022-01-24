@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "Compartilhando",
+    "slug": "compartilhando-tcc-michelle-romao",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "userInterfaceStyle": "light",
+      "infoPlist": {
+        "UIUserInterfaceStyle": "light"
+      }
+    },
+    "notification": {
+      "icon": "./assets/favicon.png",
+      "color": "#F6F6F6"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F6F6F6"
+      },
+      "userInterfaceStyle": "light",
+      "package": "com.ufcquixadaddtcc.compartilhando",
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED"
+      ]
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F6F6F6"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-system-ui",
+      "expo-notifications"
+    ]
+  }
+}

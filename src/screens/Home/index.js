@@ -8,7 +8,7 @@ import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { Entypo } from '@expo/vector-icons';
 import { startOfToday, format, startOfDay, isEqual } from 'date-fns'
 
-import { View, ActivityIndicator, Image } from 'react-native';
+import { View, ActivityIndicator, ScrollView } from 'react-native';
 import { Container, Title, Header, UserProfile, HomeContainer, Name, Information} from './styles';
 import { AuthContext } from '../../routes/context';
 
@@ -184,6 +184,7 @@ const Home = () => {
           </HomeContainer>
           
           {tasks && tasks.length > 0 ?
+          <ScrollView showsVerticalScrollIndicator={false}> 
             <View style={{width: "100%", marginTop: 44}}>
               <View style={{marginBottom: 16}}>
                 <Name>Você tem atividades para hoje 😌</Name>
@@ -202,6 +203,7 @@ const Home = () => {
                 )
               })}
             </View>
+            </ScrollView>
             :
             <View style={{width: "100%", marginTop: 44}}>
               <View style={{marginBottom: 16}}>

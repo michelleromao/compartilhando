@@ -175,6 +175,7 @@ const CreateTask = () => {
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           style={{flex: 1}}
         >
+        <ScrollView style={{flex: 1}}>
           <View
             style={{
               flex:1,
@@ -222,11 +223,9 @@ const CreateTask = () => {
                 </View>
               </ScrollView>
             </ContainerFilter>
-            <Form ref={formRef} onSubmit={handleSubmit} style={{width: "100%", alignItems: "center", justifyContent: "space-around", height: "100%"}}>
-            <ScrollView
-              contentContainerStyle={{ flex: 1 }}
-            >
-                <View style={{width: "100%"}}>
+            <Form ref={formRef} onSubmit={handleSubmit} style={{width: "85%", alignItems: "center", justifyContent: "space-around"}}>
+           
+                <View style={{width: "100%", marginBottom: 16}}>
                   <Input name="name" type="text" label="Dê um nome a tarefa:"/>
                   <Select name="responsible" label="Selecione um responsável, caso tenha:" items={residents} parentCallback={callback2}/>
                   <Select name="frequency" label="Selecione uma frequência, caso tenha:" items={frequency} parentCallback={callback}/>
@@ -235,18 +234,16 @@ const CreateTask = () => {
                   : selected === "monthly" ?
                     <Input name="dayOfMonth" type="number"  keyboardType="number-pad" label="Escolha o dia do mês que irá se repetir:" />
                   : <></>}
-                </View>
-                
-              </ScrollView>
-              <View style={{width: "100%", height: "30%", paddingLeft: "8%", paddingRight: "8%"}}>
-                <Button 
+                  <Button 
                   color="yellow"
                   text="Pronto"
                   onPress={() => formRef.current.submitForm()}
                 />
-              </View>
-            </Form>
+                </View>
+              </Form>
+              
           </View>
+          </ScrollView>
         </KeyboardAvoidingView>
       )}
     </ScrollView>

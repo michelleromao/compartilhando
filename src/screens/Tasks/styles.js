@@ -23,6 +23,7 @@ export const CreateNew = styled.TouchableOpacity`
   align-items: center;
 `;
 
+
 export const Plus = styled.Text`
   ${props => props.theme.title};
   color: ${props => props.theme.blue};
@@ -48,31 +49,30 @@ export const TabBar = styled.View`
   margin-top: 24px;
 `;
 export const Collumn = styled.View`
-  width: ${props => props.active ? `78%` : `20%`};
-  align-items: flex-start;
+  width: 49%;
 `;
 export const Tab = styled.TouchableOpacity`
   width: 100%;
 `;
 export const Color = styled.View`
   background-color: ${props => props.active ? props.theme.yellow :  props.theme.lightBlue};
-  height: 10px;
+  opacity: ${props => props.active ? 1 :  0.5};
+  height: 6px;
   border-radius: 2px;
   margin-top: 8px;
 `;
 
 export const CountText = styled.Text`
   ${props => props.theme.text};
+  opacity: ${props => props.active ? 1 :  0.3};
 `;
 export const Bold = styled.Text`
   ${props => props.theme.textBold};
 `;
 
 export const ContainerFilter = styled.View`
-  flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
-  height: 85px;
+  height: 100px;
   margin-top: 24px;
 `;
 
@@ -86,4 +86,19 @@ export const ContentFilter = styled.TouchableOpacity`
   width: 60px;
   height: 60px;
   margin-right: 12px;
+`;
+
+export const LabelFilter = styled.Text`
+  ${props => props.theme.subtitle};
+  color: ${props => props.theme.black};
+  width: 65px;
+  text-align: center;
+  font-weight: ${props => props.active ? 'bold' : 'normal'};
+  font-size: 12px;
+`;
+
+export const FilterText = styled.Text`
+  ${props => props.theme.subtitle};
+  color: ${props => props.theme.blue};
+  margin-bottom: 5px;
 `;

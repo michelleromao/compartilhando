@@ -6,7 +6,7 @@ import 'firebase/firestore'
 import { firestore } from '../../services/firebase';
 
 import { ScrollView, ActivityIndicator, View, RefreshControl } from 'react-native';
-import { Container, Title, Header, CreateNew, Plus, Content} from './styles';
+import { Container, Title, Header, CreateNew, Plus, Content } from './styles';
 import TextBox from '../../components/TextBox';
 
 const wait = (timeout) => {
@@ -25,11 +25,11 @@ const Rules = () => {
     setLoading(true);
     const homeId = await AsyncStorage.getItem('@storage_homeid');
     const userUid = await AsyncStorage.getItem('@storage_uid');
-    
+
     let userList = [];
     const snapshotUser = await firestore.collection('users').get();
     snapshotUser.forEach(doc => {
-      if(doc.data().home_id === homeId){
+      if (doc.data().home_id === homeId) {
         userList.push({
           id: doc.data().id,
           name: doc.data().name
@@ -40,42 +40,42 @@ const Rules = () => {
     let ruleList = [];
     const snapshot = await firestore.collection('rules').get();
     snapshot.forEach(doc => {
-        if(doc.data().home_id === homeId){
-          userList.forEach(user => {
-            if(doc.data().creator_id === user.id){
-              ruleList.push({
-                created_at: doc.data().created_at,
-                creator_id: doc.data().creator_id,
-                description: doc.data().description,
-                id: doc.data().id,
-                creator_name: user.name,
-                owner: doc.data().creator_id === userUid ? true : false
+      if (doc.data().home_id === homeId) {
+        userList.forEach(user => {
+          if (doc.data().creator_id === user.id) {
+            ruleList.push({
+              created_at: doc.data().created_at,
+              creator_id: doc.data().creator_id,
+              description: doc.data().description,
+              id: doc.data().id,
+              creator_name: user.name,
+              owner: doc.data().creator_id === userUid ? true : false
 
-              })
-            }
-          })
-        }
+            })
+          }
+        })
+      }
     })
 
     setRules(ruleList)
     setLoading(false)
 
-  }, [])  
+  }, [])
 
   const onRefresh = useCallback(() => {
     setRefreshing(true);
-    wait(800).then(() => {setRefreshing(false); handleGetRules()});
+    wait(800).then(() => { setRefreshing(false); handleGetRules() });
   }, [handleGetRules]);
 
   useEffect(() => {
-    if(isFocused){
+    if (isFocused) {
       handleGetRules()
     }
   }, [isFocused, handleGetRules])
 
-  return(
+  return (
     <>
-      {loading ? 
+      {loading ?
         <View
           style={{
             flex: 1,
@@ -86,14 +86,14 @@ const Rules = () => {
           }}>
           <ActivityIndicator size="small" color="#1D1843" />
         </View>
-      :
+        :
         <Container>
           <Header>
             <Title>Regras</Title>
             <CreateNew onPress={() => navigation.navigate("CreateRule")}><Plus>+</Plus></CreateNew>
           </Header>
-          <ScrollView  
-            style={{flex: 1, marginBottom: 30}}
+          <ScrollView
+            style={{ flex: 1, marginBottom: 30 }}
             showsVerticalScrollIndicator={false}
             refreshControl={
               <RefreshControl
@@ -105,15 +105,15 @@ const Rules = () => {
                 colors={["#FFB729", "#1D1843"]}
               />
             }
-            >
+          >
             <Content>
               {rules ? rules.map(rule => (
-                <TextBox 
+                <TextBox
                   key={rule.id}
-                  text={rule.description} 
-                  owner={rule.creator_name} 
+                  text={rule.description}
+                  owner={rule.creator_name}
                   disabled={rule.owner ? false : true}
-                  onPress={() => navigation.navigate("EditRule", {id:rule.id})}/>
+                  onPress={() => navigation.navigate("EditRule", { id: rule.id })} />
               )) : <></>}
             </Content>
           </ScrollView>

@@ -4,7 +4,7 @@ export const ContainerFilter = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  height: ${props => props.active ? '95px' : '60px'};
+  height: 95px;
   margin-left: 8%;
   margin-right: 8%;
   margin-bottom: 32px;
@@ -32,7 +32,9 @@ export const Label = styled.Text`
 
 export const LabelFilter = styled.Text`
   ${props => props.theme.subtitle};
-  color: ${props => props.active ? props.theme.black : 'transparent'};
-  width: 60px;
+  color: ${props => props.theme.black};
+  width: 65px;
   text-align: center;
+  font-weight: ${props => props.active ? 'bold' : 'normal'};
+  font-size: 12px;
 `;
